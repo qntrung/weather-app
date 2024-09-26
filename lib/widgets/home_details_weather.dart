@@ -1,8 +1,15 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class HomeDetailsWeather extends StatelessWidget {
-  const HomeDetailsWeather({super.key});
+  const HomeDetailsWeather({
+    super.key,
+    required this.windSpeed,
+    required this.humidity,
+  });
 
+  final num windSpeed;
+  final num humidity;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -15,9 +22,9 @@ class HomeDetailsWeather extends StatelessWidget {
               width: 49,
               height: 49,
             ),
-            const Text(
-              "5km/h",
-              style: TextStyle(
+            Text(
+              "${windSpeed.round()}km/h",
+              style: const TextStyle(
                   fontSize: 21,
                   fontFamily: "Inter",
                   fontWeight: FontWeight.w400,
@@ -32,9 +39,9 @@ class HomeDetailsWeather extends StatelessWidget {
               width: 49,
               height: 49,
             ),
-            const Text(
-              "30%",
-              style: TextStyle(
+            Text(
+              "$humidity%",
+              style: const TextStyle(
                   fontSize: 21,
                   fontFamily: "Inter",
                   fontWeight: FontWeight.w400,
