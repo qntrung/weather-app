@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:weather_app/models/weather.dart';
+import 'package:weather_app/page/home/widgets/home_details_weather.dart';
+import 'package:weather_app/page/home/widgets/home_location.dart';
+import 'package:weather_app/page/home/widgets/home_temperature.dart';
+import 'package:weather_app/page/home/widgets/home_weather_icon.dart';
 import 'package:weather_app/providers/weather_provider.dart';
-import 'package:weather_app/widgets/home_details_weather.dart';
-import 'package:weather_app/widgets/home_location.dart';
-import 'package:weather_app/widgets/home_temperature.dart';
-import 'package:weather_app/widgets/home_weather_icon.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    context.read<WeatherProvider>().getWeather();
+  }
 
   @override
   Widget build(BuildContext context) {
