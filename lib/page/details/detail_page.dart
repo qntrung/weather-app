@@ -49,6 +49,7 @@ class _DetailPageState extends State<DetailPage> {
             );
           }
           List<Forecast> fcData = snapshot.data as List<Forecast>;
+          String cityName = context.read<WeatherProvider>().cityName;
           return Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.transparent,
@@ -59,7 +60,7 @@ class _DetailPageState extends State<DetailPage> {
                 children: [
                   AnimatedTextKit(
                     animatedTexts: [
-                      TyperAnimatedText('Ho Chi Minh City',
+                      TyperAnimatedText('$cityName City',
                           speed: const Duration(milliseconds: 100)),
                     ],
                     repeatForever: true,

@@ -111,7 +111,7 @@ class Wind {
     return Wind(
       speed: map['speed'] as num,
       deg: map['deg'] as num,
-      gust: map['gust'] as num,
+      gust: map['gust'] ?? 0 as num,
     );
   }
 
